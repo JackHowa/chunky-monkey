@@ -14,7 +14,15 @@ function chunkArrayInGroups(arr, size) {
 
     // check if group size has no remainder aka multiple 
     if (i % groupSize == 0) {
-      // bigArray << arrayGroup;
+
+      // need to push array into index of that multi-d array
+      var bigArrayIndex = i / groupSize;
+
+      // bigArray[bigArrayIndex] << arrayGroup;
+
+      
+      
+
 
       // reset group 
       // arrayGroup = [];
