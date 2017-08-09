@@ -1,7 +1,7 @@
 function chunkArrayInGroups(arr, size) {
   // figure out how big each group is 
   var arrayLength = arr.length; 
-  var groupSize = arrayLength / size;
+//   var groupSize = arrayLength / size;
 
   // setup target arrays 
   var bigArray = [];
@@ -9,26 +9,22 @@ function chunkArrayInGroups(arr, size) {
 
   // feel like modulo would be helpful here 
   // start at 1 so that math of modulo works divisible by group size
-  for (i = 1; i < arr.length; i++) {
-   // arrayGroup << arr[i];
+  for (i = 0; i < arr.length; i++) {
+   arrayGroup.push(arr[i]);
 
     // check if group size has no remainder aka multiple 
-    if (i % groupSize == 0) {
+    if ((i + 1) % size == 0) {
 
       // need to push array into index of that multi-d array
-      var bigArrayIndex = i / groupSize;
+      var bigArrayIndex = i / size;
 
-      // bigArray[bigArrayIndex] << arrayGroup;
-
-      
-      
-
+      bigArray.push(arrayGroup);
 
       // reset group 
-      // arrayGroup = [];
+      arrayGroup = [];
     }
   }
   return bigArray;
 }
 
-chunkArrayInGroups(["a", "b", "c", "d"], 2);
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)
